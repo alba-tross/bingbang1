@@ -26,4 +26,9 @@ public function seekers(){
 	return $this->belongsToMany('App\Seeker');
 
 }
+
+public function categories(){
+	
+	return $this->belongsToMany('App\Category');
+}
 }

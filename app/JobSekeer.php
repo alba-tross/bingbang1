@@ -9,9 +9,9 @@ class JobSekeer extends Model
     //
 	
 	protected $fillable = [
-	     'date_applied', 
-		 'job_id',
-		 'seeker_id',
+		'seeker_id',
+		'job_id',
+		'date_applied', 
 		 'data'
 		 ];
 }

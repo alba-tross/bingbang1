@@ -15,8 +15,8 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('seeker_id');
-			$table->integer('company_id')->unsigned();
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->string('title');
             $table->longText('description');
             $table->string('category_id');
@@ -31,12 +31,14 @@ class CreateJobsTable extends Migration
 		
 		Schema::create('job_seeker', function (Blueprint $table) {
             $table->bigIncrements('id');
+            // job_id
+            $table->integer('job_id')->unsigned();
+            $table->foreign('job_id')->references('id')->on('jobs');
+			// seeker_id
+            $table->integer('seeker_id')->unsigned();
+            $table->foreign('seeker_id')->references('id')->on('seekers');
 			// date_applied
 			$table->date('date_applied');
-			// job_id
-			$table->integer('job_id')->unsigned();
-			// seeker_id
-			$table->integer('seeker_id')->unsigned();
 			// attached_cv
 			$table->binary('data');
 			// resume

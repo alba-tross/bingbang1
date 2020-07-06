@@ -29,8 +29,8 @@ class CreateCompaniesTable extends Migration
 			$table->string('cover_photo');
 			$table->string('slogan');
 			$table->longText('description');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->rememberToken()->nullable();
+            $table->timestamps()->nullable();
         });
     }
 
