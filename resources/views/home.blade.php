@@ -59,7 +59,7 @@
 		     </thead>
 		     <tbody>
 			 @foreach($jobs as $job)
-		        <tr>
+		        <tr style="font-size:15px;">
                      <td>
 					     <img src = "{{asset('avatar/total.png')}}" width="80">
 					 </td>
